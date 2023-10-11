@@ -30,6 +30,22 @@ class Game
 
     public function start(): void
     {
+        $player1chances = $this->player1->getBank() / ($this->player1->getBank() + $this->player2->getBank()) * 100 . "%";
+        $player2chances = $this->player2->getBank() / ($this->player2->getBank() + $this->player1->getBank()) * 100 . "%";
+
+        echo <<<EOT
+            The chances:
+            {$this->player1->name}: $player1chances
+            {$this->player2->name}: $player2chances
+            
+            
+        EOT;
+
+        $this->play();
+    }
+
+    public function play(): void
+    {
         while (true) {
             if ($this->flip() === "heads") {
                 $this->player1->point($this->player2);
