@@ -27,16 +27,18 @@ class Game
         }
     }
 
+    public function flip(): string
+    {
+        return rand(0, 1) ? "heads" : "tails";
+    }
+
     public function start(): void
     {
         while (true) {
-            $flip = rand(0, 1) ? "heads" : "tails";
-            if ($flip === "heads") {
-                $this->player1->coins++;
-                $this->player2->coins--;
+            if ($this->flip() === "heads") {
+                $this->player1->point($this->player2);
             } else {
-                $this->player1->coins--;
-                $this->player2->coins++;
+                $this->player2->point($this->player1);
             }
             if ($this->player1->coins === 0 || $this->player2->coins === 0) {
                 $this->end();

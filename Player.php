@@ -16,4 +16,10 @@ class Player
         $this->name = $name;
         $this->coins = $coins;
     }
+
+    public function point(Player $opponent): void
+    {
+        $this->coins++;
+        $opponent->coins--;
+    }
 }
