@@ -4,6 +4,7 @@ class Game
 {
     protected Player $player1;
     protected Player $player2;
+    protected int $flips = 1;
 
     /**
      * Game constructor.
@@ -41,6 +42,7 @@ class Game
                 $this->end();
                 break;
             }
+            $this->flips++;
         }
     }
 
@@ -50,6 +52,7 @@ class Game
             Game over.
             
             The winner is {$this->getWinner()->name}.
+            The number of tosses: {$this->flips}.
             
         EOT;
     }
