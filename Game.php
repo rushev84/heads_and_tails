@@ -30,13 +30,10 @@ class Game
 
     public function start(): void
     {
-        $player1chances = round($this->player1->getBank() / ($this->player1->getBank() + $this->player2->getBank()), 2) * 100 . "%";
-        $player2chances = round($this->player2->getBank() / ($this->player2->getBank() + $this->player1->getBank()), 2) * 100 . "%";
-
         echo <<<EOT
             The chances:
-            {$this->player1->name}: $player1chances
-            {$this->player2->name}: $player2chances
+            {$this->player1->name}: {$this->player1->getChances($this->player2)}
+            {$this->player2->name}: {$this->player2->getChances($this->player1)}
             
             
         EOT;

@@ -32,4 +32,9 @@ class Player
     {
         return $this->coins;
     }
+
+    public function getChances(Player $opponent): string
+    {
+        return round($this->getBank() / ($this->getBank() + $opponent->getBank()), 2) * 100 . "%";
+    }
 }
