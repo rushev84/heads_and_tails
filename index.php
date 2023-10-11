@@ -3,7 +3,7 @@
 require_once './vendor/autoload.php';
 
 $game = new Game(
-    new Player("Joe", 100),
+    new Player("Joe", 10000),
     new Player("Jane", 100)
 );
 
