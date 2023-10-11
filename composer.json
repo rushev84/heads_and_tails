@@ -1,0 +1,9 @@
+{
+  "name": "rushev84/heads_and_tails",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "": "./"
+     }
+   }
+}
