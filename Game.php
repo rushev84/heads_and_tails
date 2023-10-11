@@ -17,6 +17,15 @@ class Game
         $this->player2 = $player2;
     }
 
+    public function getWinner(): Player
+    {
+        if ($this->player1->coins > $this->player2->coins) {
+            return $this->player1;
+        } else {
+            return $this->player2;
+        }
+    }
+
     public function start(): void
     {
         while (true) {
@@ -39,6 +48,8 @@ class Game
     {
         echo <<<EOT
             Game over.
+            
+            The winner is {$this->getWinner()->name}.
             
         EOT;
     }
