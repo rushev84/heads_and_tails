@@ -30,8 +30,8 @@ class Game
 
     public function start(): void
     {
-        $player1chances = $this->player1->getBank() / ($this->player1->getBank() + $this->player2->getBank()) * 100 . "%";
-        $player2chances = $this->player2->getBank() / ($this->player2->getBank() + $this->player1->getBank()) * 100 . "%";
+        $player1chances = round($this->player1->getBank() / ($this->player1->getBank() + $this->player2->getBank()), 2) * 100 . "%";
+        $player2chances = round($this->player2->getBank() / ($this->player2->getBank() + $this->player1->getBank()), 2) * 100 . "%";
 
         echo <<<EOT
             The chances:
