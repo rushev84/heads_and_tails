@@ -52,7 +52,12 @@ class Game
             Game over.
             
             The winner is {$this->getWinner()->name}.
+            
             The number of tosses: {$this->flips}.
+            
+            The number of coins:
+            {$this->player1->name}: {$this->player1->coins}
+            {$this->player2->name}: {$this->player2->coins}
             
         EOT;
     }
