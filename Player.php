@@ -22,4 +22,14 @@ class Player
         $this->coins++;
         $opponent->coins--;
     }
+
+    public function isBankrupt(): bool
+    {
+        return $this->coins === 0;
+    }
+
+    public function getBank(): int
+    {
+        return $this->coins;
+    }
 }

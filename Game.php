@@ -20,11 +20,7 @@ class Game
 
     public function getWinner(): Player
     {
-        if ($this->player1->coins > $this->player2->coins) {
-            return $this->player1;
-        } else {
-            return $this->player2;
-        }
+        return $this->player1->getBank() > $this->player2->getBank() ? $this->player1 : $this->player2;
     }
 
     public function flip(): string
@@ -40,7 +36,7 @@ class Game
             } else {
                 $this->player2->point($this->player1);
             }
-            if ($this->player1->coins === 0 || $this->player2->coins === 0) {
+            if ($this->player1->isBankrupt() || $this->player2->isBankrupt()) {
                 $this->end();
                 break;
             }
@@ -58,8 +54,8 @@ class Game
             The number of tosses: {$this->flips}.
             
             The number of coins:
-            {$this->player1->name}: {$this->player1->coins}
-            {$this->player2->name}: {$this->player2->coins}
+            {$this->player1->name}: {$this->player1->getBank()}
+            {$this->player2->name}: {$this->player2->getBank()}
             
         EOT;
     }
