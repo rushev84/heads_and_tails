@@ -17,8 +17,29 @@ class Game
         $this->player2 = $player2;
     }
 
-    public function start()
+    public function start(): void
     {
-        //
+        while (true) {
+            $flip = rand(0, 1) ? "heads" : "tails";
+            if ($flip === "heads") {
+                $this->player1->coins++;
+                $this->player2->coins--;
+            } else {
+                $this->player1->coins--;
+                $this->player2->coins++;
+            }
+            if ($this->player1->coins === 0 || $this->player2->coins === 0) {
+                $this->end();
+                break;
+            }
+        }
+    }
+
+    public function end(): void
+    {
+        echo <<<EOT
+            Game over.
+            
+        EOT;
     }
 }
