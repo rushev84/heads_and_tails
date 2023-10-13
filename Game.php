@@ -20,7 +20,7 @@ class Game
 
     public function getWinner(): Player
     {
-        return $this->player1->getBank() > $this->player2->getBank() ? $this->player1 : $this->player2;
+        return $this->player1->isBankrupt() ? $this->player2 : $this->player1;
     }
 
     public function flip(): string
