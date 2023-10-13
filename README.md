@@ -7,7 +7,7 @@
 ### Запуск проекта
 - Перейдите в терминал вашей операционной системы и склонируйте проект на локальный компьютер:
 ```console
-https://github.com/rushev84/heads_and_tails.git
+git clone https://github.com/rushev84/heads_and_tails.git
 ```
 
 - Перейдите в папку с проектом и сделайте автозагрузку классов:
